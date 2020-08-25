@@ -1,0 +1,12 @@
+{
+  "name": "mik_a",
+  "version": "1.0.0",
+  "description": "stock memory server",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
