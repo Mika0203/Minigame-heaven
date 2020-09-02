@@ -1,0 +1,10 @@
+._2048table{
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+}
+
+tr, td {
+    border: 1px solid black;
+    text-align: center;
+}
