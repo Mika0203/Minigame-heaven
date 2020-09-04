@@ -5,31 +5,21 @@ services:
     restart: always
     container_name: minigame_heaven
     image: ubuntu_updated
-    working_dir: /mik_a
+    working_dir: /Minigame_heaven
     volumes:
-    - .:/mik_a
+    - .:/Minigame_heaven
     entrypoint:
     - /bin/bash
     ports:
     - "1234:1234"
     tty: true
 
-  # mongodb:
-  #   # restart: always
-  #   container_name: mongodb
-  #   working_dir: /mik_a
-  #   volumes:
-  #   - ./database:/data/db
-  #   ports:
-  #   - "27017:27017"
-  #   image: mongo:latest
-
-  # webrtcserver:
-  #   network_mode : host
-  #   # restart: always
-  #   container_name: webrtc_server
-  #   image: mik_a/webrtc_server
-  #   ports:
-  #   - "8000:8000"
-  #   tty: true
-
+  mongodb:
+    restart: always
+    container_name: mongodb
+    working_dir: /Minigame_heaven_DB
+    volumes:
+    - ./database:/data/db
+    ports:
+    - "27017:27017"
+    image: mongo:latest
