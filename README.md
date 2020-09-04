@@ -8,8 +8,8 @@
 
 ## Requirement
 
-* Server : Node.js
-* Database : MongoDB
+* Nodejs v12.18.3
+* MongoDB
 
 
 ## Server
