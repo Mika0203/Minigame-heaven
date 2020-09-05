@@ -1,23 +1,29 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/2048.css">
- 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/2048.css">
 </head>
 
 <body>
-    <div id="2048">
-
-    </div>
-
     <div id="title">
         미니 게임 천국이드아아아~
     </div>
+
+    <div class="centered" id="login-form">
+        <input style="display: none;" class="text-center" placeholder="이름" id="name"> 
+        <input class="text-center" placeholder="ID" id="id"> 
+        <input class="text-center" type="password" placeholder="PW" id="pw">
+        <input style="display: none;" class="text-center" type="password" placeholder="PW2" id="pw2">
+        <button id="login">로그인</button>
+        <button style="display: none;" id="sign-up-submit">회원가입</button>
+        <button id="sign-up">회원가입</button>
+    </div>
+
     <div id="game-list"></div>
 
-    <script src="js/main.js"></script>
-    <script src="js/2048.js"></script>
+    <script src="/js/lib.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

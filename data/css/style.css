@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Youth';
+    font-style: normal;
+    font-weight: 100;
+    src: url(../fonts/Youth.ttf);
+  }
+  
+.hcentered { position: absolute; left: 50%; transform: translateX(-50%); }
+.vcentered { position: absolute; top: 50%; transform: translateY(-50%); }
+.centered { position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);}
+  
+body{
+    background-color: #bae1ff;
+    font-family: 'Youth';
+}
+
+input{
+    border-radius: 5px;
+    font-family: 'Youth';
+}
+
+button{
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-family: 'Youth';
+    border: skyblue 1px solid;
+}
+
 #title{
     width: 100%;
     font-size: 2em;
@@ -9,3 +37,12 @@
 #game-list{
     display: grid;
 }
+
+#login-form{
+    display: inline-grid;
+}
+
+.text-center{
+    text-align: center;
+}
+
