@@ -1,3 +1,3 @@
 const gameList = {
-    yacht : "야추"
+    _2048 : "2048"
   }
