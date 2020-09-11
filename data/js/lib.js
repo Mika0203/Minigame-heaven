@@ -7,6 +7,16 @@ function AddEvent(element, event, callback) {
             })
         });
     }
+    else{
+        element.length ? element.forEach(element => element.addEventListener(event, (e) => {
+            console.log(1)
+            callback(e);
+        })) :
+        element.addEventListener(event, (e) => {
+            console.log(2)
+            callback(e);
+        });
+    }
 }
 
 function Show(element){
