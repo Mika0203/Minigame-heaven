@@ -6,7 +6,7 @@ AddEvent("login", "click", (e) => {
 
     // 이곳에서 계정 검사 후 로비로 이동
     if(true){
-        location.href = "/lobby/                ";
+        location.href = "/lobby/";
     } else{
         alert("로그인 정보가 일치하지 않습니다.");
     }

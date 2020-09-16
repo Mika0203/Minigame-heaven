@@ -13,7 +13,6 @@ app.use(express.static('data'))
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/data/html/main.html');
-    console.log(collections);
 });
 
 app.get('/lobby', function (req, res) {
