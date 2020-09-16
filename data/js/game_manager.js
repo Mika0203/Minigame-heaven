@@ -18,6 +18,7 @@ class GameManager {
 
     gameStart(){
         console.debug("Game Start!!");
+        Hide("notice");
         this.isStart = true;
         this.onGameStart();
     };
