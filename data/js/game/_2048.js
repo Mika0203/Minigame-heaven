@@ -39,6 +39,8 @@ manager.init = function (id) {
 }
 
 manager.onGameStart =  function(){
+    this.isStart = true;
+    this.isMoved = true;
     this.addNum();
 }
 
@@ -58,7 +60,7 @@ manager.addNum = function () {
                 blank.push(td);
         })
     });
-    
+
     if (blank.length > 0) {
         let cell = blank[Math.floor(Math.random() * 10 % blank.length)];
         let rand = (Math.floor(Math.random() * 10 % 2) + 1) * 2;
@@ -179,6 +181,15 @@ manager.move = function(from, command){
     }
 
     this.move(to, command);
+}
+
+manager.reset = function(){
+    for (let y = 0; y < this.tableSize[1]; y++) {
+        for (var x = 0; x < this.tableSize[0]; x++) {
+            this.table[y][x].innerHTML = "";
+            this.table[y][x].className = "";
+        }
+    }
 }
 
 function GetTableValue(coordinates) {

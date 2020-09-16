@@ -2,6 +2,16 @@ class GameManager {
     constructor(){
         this.score = 0;
         this.isStart = false;
+
+        window.addEventListener("keydown", key => {
+            switch (key.key) {
+                case "r":
+                    this.reset();
+                    this.gameStart();
+                    break;
+            }
+        })
+
     }
     
     init(){};
@@ -13,13 +23,11 @@ class GameManager {
     };
 
     gameOver(){
-        let div = document.createElement("div");
-        div.innerHTML = "Game Over";
-        document.body.appendChild(div);
-        
+        Show("notice");
         console.debug("Game Over!!");
         this.isStart = false;
     };
 
+    reset(){};
     onGameStart(){};
 }
