@@ -16,12 +16,12 @@ app.get('/', function (req, res) {
     console.log(collections);
 });
 
-app.get('/lobby/:game', function (req, res) {
-    res.sendFile(__dirname + '/data/html/lobby.html');
+app.get('/lobby', function (req, res) {
+    res.sendFile(__dirname +  '/data/html/lobby.html')
 });
 
-app.get('/gane/:gametype', function (req, res) {
-    res.sendFile(__dirname + '/data/html/lobby.html');
+app.get('/game/:gametype', function (req, res) {
+    res.sendFile(__dirname +  '/data/html/game.html')
 });
 
 server.listen(1234, '0.0.0.0', function () {
