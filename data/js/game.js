@@ -7,7 +7,7 @@ let script = document.createElement("script");
 script.src = scriptPath;
 document.body.appendChild(script);
 script.onload = function(){
-    console.log(manager);
     manager.init("table")
+    manager.gameStart();
 }
 

@@ -6,6 +6,8 @@
 * `$ npm i pm2 -g`
 * `$ pm2 start app.js --watch`
 
+* http://localhost:1234
+
 ## Requirement
 
 * Nodejs v12.18.3
