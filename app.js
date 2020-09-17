@@ -15,6 +15,10 @@ app.get('/lobby', function (req, res) {
     res.sendFile(__dirname +  '/data/html/lobby.html')
 });
 
+app.get('/forum', function (req, res) {
+    res.sendFile(__dirname +  '/data/html/forum.html')
+});
+
 app.get('/game/:gametype', function (req, res) {
     res.sendFile(__dirname +  '/data/html/game.html')
 });

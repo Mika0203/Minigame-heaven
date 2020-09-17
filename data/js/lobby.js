@@ -12,4 +12,8 @@
         })
         listdiv.appendChild(btn);
     })
+
+    document.getElementById("forum").addEventListener("click", function(){
+        location.href = "/forum";
+    })
 })();
