@@ -214,6 +214,7 @@ function MoveToTable(from, to) {
 
     if (fromval == toval) {
         fromval = fromval * 2;
+        ScoreManager.addScore(fromval);
     }
 
     cell.innerHTML = fromval;

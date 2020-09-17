@@ -4,7 +4,7 @@ class ScoreManagerClass {
         this.highscore = 0;
 
         this.scoreform = document.createElement("div");
-        this.scoreform.innerHTML = "test"
+        this.scoreform.innerHTML = "Score"
         document.body.appendChild(this.scoreform);
     }
 
@@ -13,12 +13,12 @@ class ScoreManagerClass {
     }
 
     addScore(num){
-        this.score += num;
+        this.score += parseInt(num);
         this.updateScore();
     };
     
     decreaseScore(num){
-        this.score -= num;
+        this.score -= parseInt(num);
         this.updateScore();
     }
 
@@ -33,6 +33,10 @@ class ScoreManagerClass {
     saveHighScore(){
     };
 
+    reset(){
+        this.score = 0;
+        this.updateScore();
+    }
 
 }
 
