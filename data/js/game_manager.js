@@ -1,6 +1,5 @@
 class GameManager {
     constructor(){
-        this.score = 0;
         this.isStart = false;
 
         window.addEventListener("keydown", key => {
@@ -21,6 +20,7 @@ class GameManager {
         Hide("notice");
         this.isStart = true;
         this.onGameStart();
+        ScoreManager.reset();
     };
 
     gameOver(){
