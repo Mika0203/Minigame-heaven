@@ -11,7 +11,7 @@
 ## Requirement
 
 * Nodejs v12.18.3
-* MongoDB
+* MongoDB 3.6.2
 
 
 ## Server

@@ -1,14 +1,18 @@
-var express = require('express');
-var http = require('http');
-var fs = require('fs')
+const express = require('express');
+const http = require('http');
+const fs = require('fs');
+const mongodb = require('./db');
+const app = express();
 
-var app = express();
-
-app.use(express.static('data'))
 var server = http.createServer(app);
 
+mongodb.construct()
+var collections = mongodb.collections;
+
+app.use(express.static('data'))
+
 app.get('/', function (req, res) {
-    res.sendFile(__dirname +  '/data/html/main.html')
+    res.sendFile(__dirname + '/data/html/main.html');
 });
 
 app.get('/lobby', function (req, res) {
