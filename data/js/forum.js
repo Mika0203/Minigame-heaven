@@ -1,0 +1,1 @@
+AddEvent("write-post", "click", () => {location.href = "/forum-write"})
