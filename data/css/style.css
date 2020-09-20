@@ -12,6 +12,7 @@
 body{
     background-color: #bae1ff;
     font-family: 'Youth';
+    font-weight: 700;
 }
 
 input{
@@ -46,3 +47,19 @@ button{
     text-align: center;
 }
 
+#notice {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    line-height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+}
+
+
+.forum-list{
+    display: grid;
+}
