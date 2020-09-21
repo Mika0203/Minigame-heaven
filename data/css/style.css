@@ -13,6 +13,7 @@ body{
     background-color: #bae1ff;
     font-family: 'Youth';
     font-weight: 700;
+    overflow: hidden;
 }
 
 input{
@@ -62,4 +63,21 @@ button{
 
 .forum-list{
     display: grid;
+}
+
+#navigation{
+    border: 1px solid black;
+    display: grid;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    grid-template-columns: repeat(5, 20%);
+    line-height: 50px;
+    cursor: pointer;
+}
+
+#navigation, .navigation-btn{
+    border: 1px solid black;
+
 }
