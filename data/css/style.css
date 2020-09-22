@@ -28,7 +28,7 @@ button{
     border: skyblue 1px solid;
 }
 
-#title{
+.main-title{
     width: 100%;
     font-size: 2em;
     text-align: center;
