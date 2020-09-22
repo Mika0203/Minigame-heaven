@@ -44,3 +44,16 @@ function Hide(element){
                          element.style.display = "none";
     }
 }
+
+function Post(url, data){
+    data = JSON.stringify(data);
+    let xml = new XMLHttpRequest();
+    xml.open("POST", url);
+    xml.setRequestHeader('Content-Type', 'application/json');
+    xml.send(data);
+    xml.addEventListener("readystatechange", () =>{
+        if(xml.readyState == xml.DONE && xml.status){
+            console.log(xml.responseText);
+        }
+    })
+}

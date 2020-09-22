@@ -3,6 +3,9 @@ const http = require('http');
 const fs = require('fs');
 const mongodb = require('./db');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}))
 
 var server = http.createServer(app);
 
@@ -30,6 +33,11 @@ app.get('/forum-write', function (req, res) {
 app.get('/game/:gametype', function (req, res) {
     res.sendFile(__dirname +  '/data/html/game.html')
 });
+
+app.post('/write-post', function(req, res){
+    console.log(req.body);
+    res.send('ok');
+})
 
 server.listen(1234, '0.0.0.0', function () {
     console.log('Server listen on port ' + server.address().port);

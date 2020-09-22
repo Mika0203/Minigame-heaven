@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://mik-a.iptime.org:27017';
 const dbName = 'minigame-heaven';
 
 const dblist = [
