@@ -45,7 +45,18 @@ function Hide(element){
     }
 }
 
-function Post(url, data){
+function Get(url, callback){
+    let xml = new XMLHttpRequest();
+    xml.open("GET", url);
+    xml.send();
+    xml.addEventListener("readystatechange", () =>{
+        if(xml.readyState == xml.DONE && xml.status){
+            callback(JSON.parse(xml.responseText));
+        }
+    })
+}
+
+function Post(url, data ,callback){
     data = JSON.stringify(data);
     let xml = new XMLHttpRequest();
     xml.open("POST", url);
@@ -53,7 +64,7 @@ function Post(url, data){
     xml.send(data);
     xml.addEventListener("readystatechange", () =>{
         if(xml.readyState == xml.DONE && xml.status){
-            console.log(xml.responseText);
+            callback(xml.responseText);
         }
     })
 }

@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({extended : true}))
 var server = http.createServer(app);
 
 mongodb.construct()
-var collections = mongodb.collections;
 
 app.use(express.static('data'))
 
@@ -35,8 +34,11 @@ app.get('/game/:gametype', function (req, res) {
 });
 
 app.post('/write-post', function(req, res){
-    console.log(req.body);
-    res.send('ok');
+    mongodb.write_post(req.body, (code) => {res.send(code);});
+})
+
+app.get('/get-post-list', function(req, res){
+    mongodb.get_post_list((code) => {res.send(code);});
 })
 
 server.listen(1234, '0.0.0.0', function () {
