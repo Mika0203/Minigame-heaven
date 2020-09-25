@@ -65,15 +65,22 @@ button{
     display: grid;
 }
 
+.forum-list,.post{
+    cursor: pointer;
+}
+
+.forum-list,.post,.tag{
+}
 #navigation{
     border: 1px solid black;
     display: grid;
     position: absolute;
     width: 100%;
     bottom: 0px;
+    height: 5vh;
     text-align: center;
-    grid-template-columns: repeat(5, 20%);
-    line-height: 50px;
+    grid-template-columns: repeat(5, 20vw);
+    line-height: 5vh;
     cursor: pointer;
 }
 
