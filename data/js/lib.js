@@ -68,3 +68,15 @@ function Post(url, data ,callback){
         }
     })
 }
+
+function GetParamsFromURL(){
+    let str =location.href.split('?');
+    let obj = new Object();
+
+    for(let i = 1 ; i< str.length; i++){
+        let sp = str[i].split('=');
+        obj[sp[0]] = sp[1];
+    }
+
+    return obj;
+}

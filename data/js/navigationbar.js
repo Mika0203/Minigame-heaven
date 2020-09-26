@@ -3,8 +3,8 @@
         location.href = '/lobby'
     })
 
-    AddEvent("navigation-forum", "click", () => {
-        location.href = '/forum'
+    AddEvent("navigation-board", "click", () => {
+        location.href = '/board'
     })
 
 })();

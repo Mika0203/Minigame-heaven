@@ -19,7 +19,7 @@ document.getElementById("upload").addEventListener("click", () => {
     Post('/write-post', data, (code) => {
         if(code == 1){
             alert("글 작성되었습니다");
-            location.href = '/forum';
+            location.href = '/board';
         }
     });
 })

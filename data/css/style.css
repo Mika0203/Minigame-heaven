@@ -61,15 +61,15 @@ button{
 }
 
 
-.forum-list{
+.board-list{
     display: grid;
 }
 
-.forum-list,.post{
+.board-list,.post{
     cursor: pointer;
 }
 
-.forum-list,.post,.tag{
+.board-list,.post,.tag{
 }
 #navigation{
     border: 1px solid black;
