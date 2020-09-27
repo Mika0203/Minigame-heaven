@@ -1,6 +1,14 @@
 (function(){
     AddEvent("write-post", "click", () => {location.href = "/board-write"})
 
+    let taglist = document.getElementById("taglist");
+    
+    Object.keys(gameList).forEach((e) => {
+        let tag = document.createElement('div');
+        tag.innerHTML = gameList[e];
+        taglist.appendChild(tag);
+    })
+
     Get("/get-post-list", (data) => {
         let list = document.getElementById("list");
 
@@ -27,5 +35,5 @@
 
         });
     });
-})();
 
+})();
