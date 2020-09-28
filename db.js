@@ -42,12 +42,12 @@ module.exports = {
     },
 
     get_post_list(filter, callback){
-        console.log(filter)
         this.collections['board'].find(filter).project({
             tag : 1,
             title : 1,
             _id : 0,
-            index : 1
+            index : 1,
+            date : 1
         }).sort("_id", -1).skip(0).limit(25).toArray(function(err, docs){
             console.log(docs);
             callback(docs);

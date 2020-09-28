@@ -66,12 +66,23 @@ button{
     display: grid;
 }
 
-.board-list,.post{
+.board-list>.post{
+    height: 30px;
+    line-height: 30px;
     cursor: pointer;
+    outline: solid 1px rgba(0,0,0,0.2);
+}
+
+.board-list>.post>.date{
+    right: 0px;
+    line-height: 30px;
+    cursor: pointer;
+    position: relative;
 }
 
 .board-list,.post,.tag{
 }
+
 #navigation{
     border: 1px solid black;
     display: grid;

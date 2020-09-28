@@ -3,6 +3,7 @@ Post('/get-post-data', GetParamsFromURL(), function(data){
         alert("삭제된 게시물입니다");
         location.href = "/board";
     }
+    console.log(data);
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("content").innerHTML = data.content;
     document.getElementById("delete").addEventListener("click", () => {

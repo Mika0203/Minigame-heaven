@@ -13,6 +13,8 @@
             document.body.appendChild(list);
 
             data.forEach(post => {
+                console.log(post);
+
                 let span = document.createElement('span');
                 span.className = "post";
                 span.dataset.id = post.index;
@@ -26,6 +28,11 @@
                 title.innerHTML = post.title;
                 span.appendChild(title);
                 list.appendChild(span);
+
+                let date = document.createElement('span');
+                date.className = "date";
+                date.innerHTML = post.date;
+                span.appendChild(date);
     
                 AddEvent(span, "click", function(e){
                     location.href = '/board/view/?no=' + post.index;
