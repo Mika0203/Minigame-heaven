@@ -64,7 +64,7 @@ function Post(url, data ,callback){
     xml.send(data);
     xml.addEventListener("readystatechange", () =>{
         if(xml.readyState == xml.DONE && xml.status){
-            callback(xml.responseText);
+            callback(JSON.parse(xml.responseText));
         }
     })
 }

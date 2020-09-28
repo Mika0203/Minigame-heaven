@@ -43,8 +43,8 @@ app.post('/write-post', function(req, res){
     mongodb.write_post(req.body, (code) => {res.send(code);});
 })
 
-app.get('/get-post-list', function(req, res){
-    mongodb.get_post_list((code) => {res.send(code);});
+app.post('/get-post-list', function(req, res){
+    mongodb.get_post_list(req.body, (code) => {res.send(code);});
 })
 
 app.post('/get-post-data', function(req, res){

@@ -1,5 +1,3 @@
-const { json } = require('express');
-
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://mik-a.iptime.org:27017';
 const dbName = 'minigame-heaven';
@@ -32,20 +30,26 @@ module.exports = {
     },
 
     write_post(data, callback){
+        console.log(data);
         this.collections['board'].findOne({}, {sort:{$natural:-1}}, (error, last) => {
-            data.index = last.index + 1;
+            last ?
+                data.index = last.index + 1 || 1 :
+                data.index = 1;
+
             this.collections['board'].insertOne(data);
             callback('1');
         });
     },
 
-    get_post_list(callback){
-        this.collections['board'].find({}).project({
+    get_post_list(filter, callback){
+        console.log(filter)
+        this.collections['board'].find(filter).project({
             tag : 1,
             title : 1,
             _id : 0,
             index : 1
         }).sort("_id", -1).skip(0).limit(25).toArray(function(err, docs){
+            console.log(docs);
             callback(docs);
         });
     },

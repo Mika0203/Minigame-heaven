@@ -8,9 +8,8 @@ Object.keys(gameList).forEach((game) => {
 })
 
 document.getElementById("upload").addEventListener("click", () => {
-    
     let data = {
-        tag     : gameList[tag.value],
+        tag     : tag.value,
         title   : document.getElementById("title").value,
         content : document.getElementById("content").value,
         userid  : 'testuser',
