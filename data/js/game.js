@@ -10,4 +10,3 @@ script.onload = function(){
     manager.init("table")
     manager.gameStart();
 }
-

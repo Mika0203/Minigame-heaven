@@ -13,7 +13,6 @@ document.getElementById("upload").addEventListener("click", () => {
         title   : document.getElementById("title").value,
         content : document.getElementById("content").value,
         userid  : 'testuser',
-        date    : GetCurrentTime()
     }
 
     Post('/write-post', data, (code) => {

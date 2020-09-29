@@ -7,7 +7,7 @@
     function GetList(filter){
         Post("/get-post-list", filter, (data) => {
             document.body.removeChild(document.getElementById('list'));
-            var list = document.createElement("div");
+            var list = document.createElement("ul");
             list.className = 'board-list';
             list.setAttribute('id', 'list');
             document.body.appendChild(list);
@@ -15,7 +15,7 @@
             data.forEach(post => {
                 console.log(post);
 
-                let span = document.createElement('span');
+                let span = document.createElement('li');
                 span.className = "post";
                 span.dataset.id = post.index;
     
@@ -29,7 +29,7 @@
                 span.appendChild(title);
                 list.appendChild(span);
 
-                let date = document.createElement('span');
+                let date = document.createElement('div');
                 date.className = "date";
                 date.innerHTML = post.date;
                 span.appendChild(date);
