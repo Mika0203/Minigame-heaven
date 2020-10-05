@@ -1,11 +1,19 @@
 const express = require('express');
 const http = require('http');
 const fs = require('fs');
-const mongodb = require('./db');
+const mongodb = require('./lib/db');
 const app = express();
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}))
+
+// Routers ###################################################
+
+var board_router = express.Router();
+app.use('/board', board_router);
+
+// ###########################################################
 
 var server = http.createServer(app);
 
@@ -39,22 +47,23 @@ app.get('/game/:gametype', function (req, res) {
 
 //#region board
 
-app.post('/write-post', function(req, res){
+board_router.post('/write-post', function(req, res){
     req.body.date = GetCurrentTime();
     mongodb.write_post(req.body, (code) => {res.send(code);});
 })
 
-app.post('/get-post-list', function(req, res){
+board_router.post('/get-post-list', function(req, res){
     mongodb.get_post_list(req.body, (code) => {res.send(code);});
 })
 
-app.post('/get-post-data', function(req, res){
+board_router.post('/get-post-data', function(req, res){
     mongodb.get_post_data(req.body.no,(code) => {res.send(code);});
 })
 
-app.post('/delete-post', function(req, res){
+board_router.post('/delete-post', function(req, res){
     mongodb.delete_post(req.body.no, (is) => {res.send(is);});
 })
+
 
 //#endregion
 

@@ -5,7 +5,7 @@
     TagGenerator();
 
     function GetList(filter){
-        Post("/get-post-list", filter, (data) => {
+        Post("/board/get-post-list", filter, (data) => {
             document.body.removeChild(document.getElementById('list'));
             var list = document.createElement("ul");
             list.className = 'board-list';

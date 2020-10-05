@@ -15,7 +15,7 @@ document.getElementById("upload").addEventListener("click", () => {
         userid  : 'testuser',
     }
 
-    Post('/write-post', data, (code) => {
+    Post('/board/write-post', data, (code) => {
         if(code == 1){
             alert("글 작성되었습니다");
             location.href = '/board';
