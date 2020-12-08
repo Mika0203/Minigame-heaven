@@ -1,0 +1,6 @@
+{
+    "db" : {
+        "url"   : "mongodb://mik-a.iptime.org:27017",
+        "name"  : "minigame-heaven"
+    }
+}
