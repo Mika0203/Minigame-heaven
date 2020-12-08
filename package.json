@@ -9,7 +9,10 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "mongodb": "^3.6.2",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.13",
+    "nodemailer-smtp-transport": "^2.7.4"
   },
   "scripts": {
     "start": "react-scripts start",

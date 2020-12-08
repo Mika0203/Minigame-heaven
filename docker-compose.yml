@@ -1,0 +1,25 @@
+
+version: "2.3"
+services:
+  server:
+    restart: always
+    container_name: minigame_heaven
+    image: ubuntu_updated
+    working_dir: /Minigame_heaven
+    volumes:
+    - .:/Minigame_heaven
+    entrypoint:
+    - /bin/bash
+    ports:
+    - "1234:1234"
+    tty: true
+
+  mongodb:
+    restart: always
+    container_name: mongodb
+    working_dir: /Minigame_heaven_DB
+    volumes:
+    - ./database:/data/db
+    ports:
+    - "27017:27017"
+    image: mongo:latest
