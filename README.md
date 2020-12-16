@@ -6,4 +6,6 @@
 
 `npm start`
 
+# 도움말 - Wiki
 
+<a href='https://github.com/Mika0203/Minigame-heaven/wiki'>도움말</a>
