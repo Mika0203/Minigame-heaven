@@ -1,20 +1,24 @@
-import React from 'react';
-import gameList from '../config'
+import { ChangeRouter } from '../Actions';
+import gameList from '../config';
+import { useDispatch } from 'react-redux';
 
-class Game extends React.Component {
-    render() {
-        return <div>{this.loadGameList()}</div>
-    }
+function Game(props) {
+    const dispatch = useDispatch();
 
-    loadGameList() {
+    const loadGameList = () => {
         let list = [];
+        const onClick = (game) => {
+            console.log(game);
+            dispatch(ChangeRouter('/game/' + game));
+        }
+
         Object.keys(gameList).forEach((game) => {
-            list.push(<button onClick={
-                () => { window.location.href = "/game/" + game }}
-                key={game}>{gameList[game]}</button>);
+            list.push(<button className='game-button' onClick={() => onClick(game)} key={game}>{gameList[game]}</button>);
         })
         return list;
     }
+
+    return <div>{loadGameList()}</div>
 }
 
 

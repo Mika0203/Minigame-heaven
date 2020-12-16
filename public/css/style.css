@@ -105,6 +105,10 @@ button{
     border: 1px solid black;
 }
 
+.navigation-btn.selected {
+    background-color:#59adee;
+}
+
 #taglist {
     display: flex;
     background-color: white;
@@ -125,4 +129,12 @@ button{
 }
 .board-tag.selected{
     color: blue;
+}
+
+.game-button{
+    border-radius: 8px;
+    width: 50%;
+    height: 10vh;
+    margin: 5px;
+    font-size: 20px;
 }

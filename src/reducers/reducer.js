@@ -1,9 +1,7 @@
 import { CHANGE_ROUTER } from '../Actions/index';
-import { combineReducers } from 'redux';
 
-console.log()
 const counterInitialState = {
-    route: window.location.pathname.split('/')[1],
+    router: window.location.pathname.split('/')[1],
 };
 
 const reducer = (state = counterInitialState, action) => {
@@ -11,9 +9,9 @@ const reducer = (state = counterInitialState, action) => {
     
     switch(action.type) {
         case CHANGE_ROUTER:
-            window.history.pushState('','',action.value);
+            window.history.pushState('','',action.router);
             return Object.assign({}, state, {
-                route: action.value
+                router: action.router
             });
  
         default:

@@ -1,26 +1,26 @@
-import React from 'react';
-import { CHANGE_ROUTER } from '../Actions/index'
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { ChangeRouter } from '../Actions/index';
 
-class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.move = this.move.bind(this);
+function Navigation(){
+    const dispatch = useDispatch();
+    const currentRouter = useSelector(e => e.router);
+    const Button = (props) => {
+        const move = (e) => {
+            const router = e.target.id;
+            dispatch(ChangeRouter(router))
+        }
+        let className = 'navigation-btn';
+        className += currentRouter === props.id ? ' selected' : '';
+        return <li onClick={move} id={props.id} className={className}>{props.text}</li>
     }
-
-    render() {
-        return <ul id='navigation'>
-            <li onClick={this.move} id="navigation-home" className="navigation-btn">홈</li>
-            <li onClick={this.move} id="navigation-game" className="navigation-btn">게임</li>
-            <li onClick={this.move} id="navigation-board" className="navigation-btn">게시판</li>
-            <li onClick={this.move} id="navigation-ranking" className="navigation-btn">랭킹</li>
-            <li onClick={this.move} id="navigation-myinfo" className="navigation-btn">내 정보</li>
-        </ul>
-    }
-
-    move(e) {
-        this.props.dispatch({ type: CHANGE_ROUTER, value: e.target.id.split('-')[1] })
-    }
+    
+    return <ul id='navigation'>
+        <Button id='home' text='홈'/>
+        <Button id='game' text='게임'/>
+        <Button id='board' text='게시판'/>
+        <Button id='ranking' text='랭킹'/>
+        <Button id='myinfo' text='내 정보'/>
+    </ul>
 }
 
-export default connect(undefined)(Navigation)
+export default Navigation

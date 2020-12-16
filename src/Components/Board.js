@@ -2,8 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import gameList from '../config';
 import { CHANGE_ROUTER } from '../Actions/index'
-import { connect } from 'react-redux';
-
 export class Board extends React.Component {
     constructor(props) {
         super(props);
@@ -82,9 +80,6 @@ export class WritePost extends React.Component {
         title: undefined,
         content: undefined
     }
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return <div>
@@ -119,13 +114,12 @@ export class WritePost extends React.Component {
 
         let ret = await axios.post('/board/write-post', data)
 
-        if (ret.data == 1) {
+        if (ret.data === 1) {
             alert("작성되었습니다");
             changeRouter('board', this);
         }
     }
 }
-
 export class ViewPost extends React.Component {
     constructor(props) {
         super(props);
@@ -181,10 +175,5 @@ export class ViewPost extends React.Component {
 let changeRouter = (route, _this) => {
     _this.props.dispatch({ type: CHANGE_ROUTER, value: route })
 };
-
-
-Board = connect()(Board);
-WritePost = connect()(WritePost);
-ViewPost = connect()(ViewPost);
 
 export default undefined;
